@@ -1,6 +1,8 @@
 class SongList < ApplicationRecord
   # Direct associations
 
+  belongs_to :playlist
+
   belongs_to :song
 
   # Indirect associations
