@@ -1,0 +1,46 @@
+<!-- Validation failure messages -->
+<% if @song_list.errors.any? %>
+  <% @song_list.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Song List</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_song_list" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for song_id -->
+      <div class="form-group">
+        <label for="song_id" class="control-label">
+          Song
+        </label>
+
+        <input type="text" id="song_id" name="song_id" placeholder="Song" class="form-control" value="<%= @song_list.song_id %>">
+      </div>
+
+      <!-- Label and input for playlist_id -->
+      <div class="form-group">
+        <label for="playlist_id" class="control-label">
+          Playlist
+        </label>
+
+        <input type="text" id="playlist_id" name="playlist_id" placeholder="Playlist" class="form-control" value="<%= @song_list.playlist_id %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Song List
+      </button>
+      or
+      <a href="/song_lists">Cancel</a>
+    </form>
+  </div>
+</div>
