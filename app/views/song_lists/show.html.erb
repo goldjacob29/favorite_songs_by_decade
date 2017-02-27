@@ -6,10 +6,22 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>Song</dt>
-      <dd><%= @song_list.song_id %></dd>
+      <dd>
+        <% if @song_list.song.present? %>
+          <a href="/songs/<%= @song_list.song_id %>">
+            <%= @song_list.song.title %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Playlist</dt>
-      <dd><%= @song_list.playlist_id %></dd>
+      <dd>
+        <% if @song_list.playlist.present? %>
+          <a href="/playlists/<%= @song_list.playlist_id %>">
+            <%= @song_list.playlist.user_id %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

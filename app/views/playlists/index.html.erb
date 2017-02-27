@@ -15,7 +15,13 @@
 
       <% @playlists.each do |playlist| %>
       <tr>
-        <td><%= playlist.user.email %></td>
+        <td>
+          <% if playlist.user.present? %>
+            <a href="/users/<%= playlist.user.id %>">
+              <%= playlist.user.email %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/playlists/<%= playlist.id %>" class="btn btn-primary">Show</a>
           

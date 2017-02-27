@@ -20,8 +20,20 @@
       <% @songs.each do |song| %>
       <tr>
         <td><%= song.title %></td>
-        <td><%= song.artist.artist_name %></td>
-        <td><%= song.genre.genre_name %></td>
+        <td>
+          <% if song.artist.present? %>
+            <a href="/artists/<%= song.artist.id %>">
+              <%= song.artist.artist_name %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if song.genre.present? %>
+            <a href="/genres/<%= song.genre.id %>">
+              <%= song.genre.genre_name %>
+            </a>
+          <% end %>
+        </td>
         <td><%= song.decade %></td>
         <td><%= song.year %></td>
         <td>

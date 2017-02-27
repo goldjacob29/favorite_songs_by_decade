@@ -9,10 +9,22 @@
       <dd><%= @song.title %></dd>
 
       <dt>Artist</dt>
-      <dd><%= @song.artist_id %></dd>
+      <dd>
+        <% if @song.artist.present? %>
+          <a href="/artists/<%= @song.artist_id %>">
+            <%= @song.artist.artist_name %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Genre</dt>
-      <dd><%= @song.genre_id %></dd>
+      <dd>
+        <% if @song.genre.present? %>
+          <a href="/genres/<%= @song.genre_id %>">
+            <%= @song.genre.genre_name %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Decade</dt>
       <dd><%= @song.decade %></dd>
