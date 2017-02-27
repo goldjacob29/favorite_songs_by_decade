@@ -5,6 +5,8 @@ class Song < ApplicationRecord
 
   # Validations
 
+  validates :year, :presence => true
+
   validates :year, :numericality => { :less_than => 2018, :greater_than => 1000 }
 
 end
