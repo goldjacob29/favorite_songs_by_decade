@@ -33,7 +33,7 @@
           Playlist
         </label>
 
-        <input type="text" id="playlist_id" name="playlist_id" placeholder="Playlist" class="form-control" value="<%= @song_list.playlist_id %>">
+        <%= select_tag(:playlist_id, options_from_collection_for_select(Playlist.all, :id, :user_id, @song_list.playlist_id), :class => "form-control") %>
       </div>
 
       <button class="btn btn-warning">
