@@ -5,4 +5,6 @@ class Artist < ApplicationRecord
 
   # Validations
 
+  validates :artist_name, :presence => true
+
 end
