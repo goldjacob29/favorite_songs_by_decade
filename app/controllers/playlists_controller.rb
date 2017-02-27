@@ -10,7 +10,8 @@ class PlaylistsController < ApplicationController
   end
 
   def index
-    @playlists = Playlist.page(params[:page]).per(10)
+    @q = Playlist.ransack(params[:q])
+    @playlists = @q.result(:distinct => true).includes(:user, :song_lists).page(params[:page]).per(10)
 
     render("playlists/index.html.erb")
   end
