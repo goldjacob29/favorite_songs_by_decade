@@ -5,4 +5,6 @@ class SongList < ApplicationRecord
 
   # Validations
 
+  validates :playlist_id, :presence => true
+
 end
