@@ -5,6 +5,8 @@ class Song < ApplicationRecord
 
   # Validations
 
+  validates :artist_id, :presence => true
+
   validates :genre_id, :presence => true
 
   validates :title, :uniqueness => { :scope => [:artist_id] }
