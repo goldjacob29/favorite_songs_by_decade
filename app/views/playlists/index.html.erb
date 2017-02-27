@@ -18,8 +18,11 @@
         <td><%= playlist.user.email %></td>
         <td>
           <a href="/playlists/<%= playlist.id %>" class="btn btn-primary">Show</a>
-          <a href="/playlists/<%= playlist.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_playlist/<%= playlist.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          
+          <% if current_user == playlist.user %>
+            <a href="/playlists/<%= playlist.id %>/edit" class="btn btn-warning">Edit</a>
+            <a href="/delete_playlist/<%= playlist.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          <% end %>
         </td>
       </tr>
       <% end %>
