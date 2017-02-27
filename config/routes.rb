@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "songs#index"
   # Routes for the Song_list resource:
   # CREATE
   get "/song_lists/new", :controller => "song_lists", :action => "new"
