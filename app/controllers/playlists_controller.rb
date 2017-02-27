@@ -47,8 +47,6 @@ class PlaylistsController < ApplicationController
   def update
     @playlist = Playlist.find(params[:id])
 
-    @playlist.user_id = params[:user_id]
-
     save_status = @playlist.save
 
     if save_status == true
