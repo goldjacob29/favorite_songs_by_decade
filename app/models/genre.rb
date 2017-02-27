@@ -5,4 +5,6 @@ class Genre < ApplicationRecord
 
   # Validations
 
+  validates :genre_name, :presence => true
+
 end
