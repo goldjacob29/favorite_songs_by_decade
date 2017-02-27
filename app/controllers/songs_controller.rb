@@ -6,6 +6,7 @@ class SongsController < ApplicationController
   end
 
   def show
+    @song_list = SongList.new
     @song = Song.find(params[:id])
 
     render("songs/show.html.erb")

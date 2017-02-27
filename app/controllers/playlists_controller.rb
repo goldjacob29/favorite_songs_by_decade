@@ -16,6 +16,7 @@ class PlaylistsController < ApplicationController
   end
 
   def show
+    @song_list = SongList.new
     @playlist = Playlist.find(params[:id])
 
     render("playlists/show.html.erb")
