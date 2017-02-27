@@ -24,7 +24,7 @@
           Song
         </label>
 
-        <input type="text" id="song_id" name="song_id" placeholder="Song" class="form-control" value="<%= @song_list.song_id %>">
+        <%= select_tag(:song_id, options_from_collection_for_select(Song.all, :id, :title, @song_list.song_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for playlist_id -->
