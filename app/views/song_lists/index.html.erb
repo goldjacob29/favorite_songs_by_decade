@@ -16,7 +16,7 @@
 
       <% @song_lists.each do |song_list| %>
       <tr>
-        <td><%= song_list.song_id %></td>
+        <td><%= song_list.song.title %></td>
         <td><%= song_list.playlist_id %></td>
         <td>
           <a href="/song_lists/<%= song_list.id %>" class="btn btn-primary">Show</a>
