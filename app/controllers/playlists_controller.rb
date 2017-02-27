@@ -10,7 +10,7 @@ class PlaylistsController < ApplicationController
   end
 
   def index
-    @playlists = Playlist.all
+    @playlists = Playlist.page(params[:page]).per(10)
 
     render("playlists/index.html.erb")
   end
