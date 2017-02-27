@@ -1,6 +1,8 @@
 class Song < ApplicationRecord
   # Direct associations
 
+  belongs_to :genre
+
   belongs_to :artist,
              :counter_cache => true
 
