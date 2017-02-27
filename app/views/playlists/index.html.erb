@@ -15,7 +15,7 @@
 
       <% @playlists.each do |playlist| %>
       <tr>
-        <td><%= playlist.user_id %></td>
+        <td><%= playlist.user.email %></td>
         <td>
           <a href="/playlists/<%= playlist.id %>" class="btn btn-primary">Show</a>
           <a href="/playlists/<%= playlist.id %>/edit" class="btn btn-warning">Edit</a>
