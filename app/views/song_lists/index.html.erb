@@ -26,7 +26,7 @@
         <td>
           <% if song_list.playlist.present? %>
             <a href="/playlists/<%= song_list.playlist.id %>">
-              <%= song_list.playlist.user_id %>
+              <%= song_list.playlist.name %>
             </a>
           <% end %>
         </td>

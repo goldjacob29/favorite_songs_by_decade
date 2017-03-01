@@ -26,9 +26,6 @@
         <% end %>
       </dd>
 
-      <dt>Decade</dt>
-      <dd><%= @song.decade %></dd>
-
       <dt>Year</dt>
       <dd><%= @song.year %></dd>
 
@@ -90,7 +87,7 @@
           Playlist
         </label>
 
-        <%= select_tag(:playlist_id, options_from_collection_for_select(Playlist.all, :id, :user_id), :class => "form-control") %>
+        <%= select_tag(:playlist_id, options_from_collection_for_select(Playlist.all, :id, :name), :class => "form-control") %>
       </div>
 
       <button class="btn btn-block btn-success">

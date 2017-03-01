@@ -78,15 +78,6 @@
         <%= select_tag(:genre_id, options_from_collection_for_select(Genre.all, :id, :genre_name), :class => "form-control") %>
       </div>
 
-      <!-- Label and input for decade -->
-      <div class="form-group">
-        <label for="decade" class="control-label">
-          Decade
-        </label>
-
-        <input type="text" id="decade" name="decade" placeholder="Decade" class="form-control" value="">
-      </div>
-
       <!-- Label and input for year -->
       <div class="form-group">
         <label for="year" class="control-label">
