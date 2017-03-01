@@ -25,7 +25,6 @@ class SongsController < ApplicationController
     @song.title = params[:title]
     @song.artist_id = params[:artist_id]
     @song.genre_id = params[:genre_id]
-    @song.decade = params[:decade]
     @song.year = params[:year]
 
     save_status = @song.save
@@ -56,7 +55,6 @@ class SongsController < ApplicationController
     @song.title = params[:title]
     @song.artist_id = params[:artist_id]
     @song.genre_id = params[:genre_id]
-    @song.decade = params[:decade]
     @song.year = params[:year]
 
     save_status = @song.save

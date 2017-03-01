@@ -33,6 +33,9 @@ class PlaylistsController < ApplicationController
     @playlist = Playlist.new
 
     @playlist.user_id = params[:user_id]
+    @playlist.name = params[:name]
+    @playlist.description = params[:description]
+    @playlist.share = params[:share]
 
     save_status = @playlist.save
 
@@ -58,6 +61,9 @@ class PlaylistsController < ApplicationController
 
   def update
     @playlist = Playlist.find(params[:id])
+    @playlist.name = params[:name]
+    @playlist.description = params[:description]
+    @playlist.share = params[:share]
 
     save_status = @playlist.save
 

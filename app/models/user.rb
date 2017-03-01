@@ -1,8 +1,7 @@
 class User < ApplicationRecord
   # Direct associations
 
-  has_many   :user_decades,
-             :class_name => "Playlist",
+  has_many   :playlists,
              :dependent => :destroy
 
   has_many   :friend_requests_recieved,

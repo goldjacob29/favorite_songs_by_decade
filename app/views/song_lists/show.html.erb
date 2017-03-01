@@ -18,7 +18,7 @@
       <dd>
         <% if @song_list.playlist.present? %>
           <a href="/playlists/<%= @song_list.playlist_id %>">
-            <%= @song_list.playlist.user_id %>
+            <%= @song_list.playlist.name %>
           </a>
         <% end %>
       </dd>
